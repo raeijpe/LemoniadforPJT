@@ -1,0 +1,72 @@
+# This is the resource bundle for ewq
+
+#XTIT: Application name
+appTitle=ewq
+
+#YDES: Application description
+appDescription=
+
+#~~~ Mentorlist View ~~~~~~~~~~~~~~~~~~~~~~~~~~
+#XTIT: Table view title
+mentorlistViewTitle=ewq
+
+#XTIT: Table view title
+mentorlistTableTitle=CompanySet
+
+#XTOL: Tooltip for the search field
+mentorlistSearchTooltip=Enter an CompanySet name or a part of it.
+
+#XBLI: text for a table with no data with filter or search
+mentorlistNoDataWithSearchText=No matching CompanySet found
+
+#XTIT: Table view title with placeholder for the number of items
+mentorlistTableTitleCount=CompanySet ({0})
+
+#XTIT: The title of the column containing the Fax of CompanySet
+tableNameColumnTitle=Fax
+
+
+#XBLI: text for a table with no data
+tableNoDataText=No CompanySet are currently available
+
+#XLNK: text for link in 'not found' pages
+backToMentorlist=Show ewq
+
+#~~~ Object View ~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#XTIT: Object view title
+objectTitle=CompanySet
+
+#~~~ Footer Options ~~~~~~~~~~~~~~~~~~~~~~~
+
+#XTIT: Send E-Mail subject
+shareSendEmailMentorlistSubject=<Email subject PLEASE REPLACE ACCORDING TO YOUR USE CASE>
+
+#YMSG: Send E-Mail message
+shareSendEmailMentorlistMessage=<Email body PLEASE REPLACE ACCORDING TO YOUR USE CASE>\r\n{0}
+
+#XTIT: Send E-Mail subject
+shareSendEmailObjectSubject=<Email subject including object identifier PLEASE REPLACE ACCORDING TO YOUR USE CASE> {0}
+
+#YMSG: Send E-Mail message
+shareSendEmailObjectMessage=<Email body PLEASE REPLACE ACCORDING TO YOUR USE CASE> {0} (id: {1})\r\n{2}
+
+
+#~~~ Not Found View ~~~~~~~~~~~~~~~~~~~~~~~
+
+#XTIT: Not found view title
+notFoundTitle=Not Found
+
+#YMSG: The CompanySet not found text is displayed when there is no CompanySet with this id
+noObjectFoundText=This CompanySet is not available
+
+#YMSG: The CompanySet not available text is displayed when there is no data when starting the app
+noObjectsAvailableText=No CompanySet are currently available
+
+#YMSG: The not found text is displayed when there was an error loading the resource (404 error)
+notFoundText=The requested resource was not found
+
+#~~~ Error Handling ~~~~~~~~~~~~~~~~~~~~~~~
+
+#YMSG: Error dialog description
+errorText=Sorry, a technical error occurred! Please try again later.

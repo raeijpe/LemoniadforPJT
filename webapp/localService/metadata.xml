@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0"
+    xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+    xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+    xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="Z_TORBOLE_SRV" xml:lang="en" sap:schema-version="1"
+            xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="Company" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Id"/>
+                </Key>
+                <Property Name="Id" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="BP Number" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Name" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="Naam"/>
+                <Property Name="Telephone" Type="Edm.String" MaxLength="30" sap:label="Telephone" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fax" Type="Edm.String" MaxLength="30" sap:label="Fax" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Website" Type="Edm.String" MaxLength="132" sap:label="Website" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Kvk" Type="Edm.String" MaxLength="40" sap:label="KvK Nummer" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SubsidiaryOf" Type="Edm.String" MaxLength="10" sap:label="Subsidiary of" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Status" Type="Edm.String" MaxLength="5" sap:label="User status" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="IsCustomer" Type="Edm.Boolean" sap:label="Customer" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="IsConsultancy" Type="Edm.Boolean" sap:label="Consultancy" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="IsPartner" Type="Edm.Boolean" sap:label="Parnter" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="IsFreelancer" Type="Edm.Boolean" sap:label="Freelancer" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="IsInitiator" Type="Edm.Boolean" sap:label="Initiator" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="IsContractparty" Type="Edm.Boolean" sap:label="Contract Party" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="IsAssociate" Type="Edm.Boolean" sap:label="Associate" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="Location" Relationship="Z_TORBOLE_SRV.CompanyLocation" FromRole="FromRole_CompanyLocation" ToRole="ToRole_CompanyLocation"/>
+                <NavigationProperty Name="Project" Relationship="Z_TORBOLE_SRV.CompanyProject" FromRole="FromRole_CompanyProject" ToRole="ToRole_CompanyProject"/>
+            </EntityType>
+            <EntityType Name="Location" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Id"/>
+                    <PropertyRef Name="CompanyId"/>
+                </Key>
+                <Property Name="Id" Type="Edm.String" Nullable="false" MaxLength="32" sap:label="Location ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CompanyId" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="BP Number" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Standardaddress" Type="Edm.String" Nullable="false" MaxLength="1" sap:label="Stand. address" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="LocationCoName" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="c/o" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Street" Type="Edm.String" Nullable="false" MaxLength="60" sap:label="Street" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Housno" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="House Number" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Postalcode" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="Postal Code" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="City" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="City" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Telephone" Type="Edm.String" Nullable="false" MaxLength="30" sap:label="Telephone" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fax" Type="Edm.String" Nullable="false" MaxLength="30" sap:label="Fax" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Pobox" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="PO Box" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="PoPostalcode" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="PO box post cde" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="PoCity" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="PO Box City" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Facturatie" Type="Edm.String" Nullable="false" MaxLength="1" sap:label="Checkbox" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="Company" Relationship="Z_TORBOLE_SRV.CompanyLocation" FromRole="ToRole_CompanyLocation" ToRole="FromRole_CompanyLocation"/>
+            </EntityType>
+            <EntityType Name="Project" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="ProjId"/>
+                </Key>
+                <Property Name="ProjId" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="Project ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CompanyId" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="BP Number" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CompanyName" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="Company Name" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="LocationId" Type="Edm.String" Nullable="false" MaxLength="32" sap:label="Location ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ProjName" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="Project Name" sap:updatable="false"/>
+                <Property Name="ProjStart" Type="Edm.DateTime" Nullable="false" Precision="7" sap:label="Start Date"/>
+                <Property Name="ProjEnd" Type="Edm.DateTime" Nullable="false" Precision="7" sap:label="End Date"/>
+                <Property Name="ProjStatus" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="Status" sap:creatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ProjDeleted" Type="Edm.Boolean" Nullable="false" sap:label="Deleted" sap:creatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="LocationName" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="Location Name" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="ProjectCode" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="Project Code" sap:creatable="false" sap:updatable="false"/>
+                <NavigationProperty Name="Company" Relationship="Z_TORBOLE_SRV.CompanyProject" FromRole="ToRole_CompanyProject" ToRole="FromRole_CompanyProject"/>
+            </EntityType>
+            <Association Name="CompanyProject" sap:content-version="1">
+                <End Type="Z_TORBOLE_SRV.Company" Multiplicity="1" Role="FromRole_CompanyProject"/>
+                <End Type="Z_TORBOLE_SRV.Project" Multiplicity="*" Role="ToRole_CompanyProject"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_CompanyProject">
+                        <PropertyRef Name="Id"/>
+                    </Principal>
+                    <Dependent Role="ToRole_CompanyProject">
+                        <PropertyRef Name="CompanyId"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="CompanyLocation" sap:content-version="1">
+                <End Type="Z_TORBOLE_SRV.Company" Multiplicity="1" Role="FromRole_CompanyLocation"/>
+                <End Type="Z_TORBOLE_SRV.Location" Multiplicity="*" Role="ToRole_CompanyLocation"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_CompanyLocation">
+                        <PropertyRef Name="Id"/>
+                    </Principal>
+                    <Dependent Role="ToRole_CompanyLocation">
+                        <PropertyRef Name="CompanyId"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <EntityContainer Name="Z_TORBOLE_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="LocationSet" EntityType="Z_TORBOLE_SRV.Location" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="ProjectSet" EntityType="Z_TORBOLE_SRV.Project" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="CompanySet" EntityType="Z_TORBOLE_SRV.Company" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <AssociationSet Name="CompanyLocationSet" Association="Z_TORBOLE_SRV.CompanyLocation" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="CompanySet" Role="FromRole_CompanyLocation"/>
+                    <End EntitySet="LocationSet" Role="ToRole_CompanyLocation"/>
+                </AssociationSet>
+                <AssociationSet Name="CompanyProjectSet" Association="Z_TORBOLE_SRV.CompanyProject" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="CompanySet" Role="FromRole_CompanyProject"/>
+                    <End EntitySet="ProjectSet" Role="ToRole_CompanyProject"/>
+                </AssociationSet>
+            </EntityContainer>
+            <atom:link rel="self" href="./sap/Z_TORBOLE_SRV/$metadata"
+                xmlns:atom="http://www.w3.org/2005/Atom"/>
+                <atom:link rel="latest-version" href="./sap/Z_TORBOLE_SRV/$metadata"
+                    xmlns:atom="http://www.w3.org/2005/Atom"/>
+                </Schema>
+            </edmx:DataServices>
+        </edmx:Edmx>

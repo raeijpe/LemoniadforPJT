@@ -1,0 +1,31 @@
+<core:FragmentDefinition xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns:saptable="sap.ui.table"
+	xmlns:core="sap.ui.core" xmlns="sap.m">
+	<Table id="alumniMentorlistTable" width="auto" class="sapUiResponsiveMargin"
+		items="{ path: '/Mentors', parameters: { select: 'FullName,ShirtNumber,Id', expand: 'MentorStatus' }, sorter: {path: 'ShirtNumber', descending: false} }"
+		noDataText="{MentorlistView>/tableNoDataText}" busyIndicatorDelay="{MentorlistView>/tableBusyDelay}" growing="true"
+		growingScrollToLoad="true" updateFinished="onUpdateFinishedMentorlistTable">
+		<headerToolbar>
+			<Toolbar id="alumniMentorlistTableToolbar">
+				<Title id="alumniMentorlistTableHeader" text="{MentorlistView>/AlumniMentorlistTableTitle}"/>
+				<ToolbarSpacer/>
+				<SearchField id="alumniMentorlistTableSearch" tooltip="{i18n>MentorlistSearchTooltip}" search="onSearchMentorListTable" width="auto"></SearchField>
+			</Toolbar>
+		</headerToolbar>
+		<columns>
+			<Column id="alumniMentorlistTableColumnShirtNumber">
+				<Label text="{i18n>MentorListTableNameColumnTitle}" id="alumniMentorlistTableColumnShirtNumberLabel"/>
+			</Column>
+			<Column id="alumniMentorlistTableColumnFullName">
+				<Label text="{i18n>MentorListTableColumnFullNameLabel}" id="alumniMentorlistTableColumnFullNameLabel"/>
+			</Column>
+		</columns>
+		<items> 
+			<ColumnListItem type="Navigation" press="onPress">
+				<cells>
+					<ObjectIdentifier title="{ShirtNumber}" class="sapMTableContentMargin"/>
+					<Text text="{FullName}" class="sapMTableContentMargin"/>
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+</core:FragmentDefinition>

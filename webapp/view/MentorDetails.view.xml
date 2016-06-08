@@ -1,0 +1,109 @@
+<mvc:View controllerName="com.sap.mentors.lemonaid.projectteam.controller.MentorDetails" xmlns="sap.m" xmlns:uxap="sap.uxap"
+	xmlns:layout="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.m.semantic" xmlns:core="sap.ui.core">
+	<semantic:FullscreenPage id="mentorDetailsPage" navButtonPress="onNavBack" showNavButton="true" title="{i18n>LEMONAID_MLV_001}">
+		<semantic:content>
+			<uxap:ObjectPageLayout  id="mentorDetailsObjectPageLayout" enableLazyLoading="false" showTitleInHeaderContent="true" showEditHeaderButton="false" subSectionLayout="TitleOnTop" toggleAnchorBar="onToggleAnchorBar" useIconTabBar="true">
+				<uxap:headerTitle>
+					<uxap:ObjectPageHeader headerDesign="Light" 
+						id="mentorDetailsObjectPageHeader" 		
+						objectImageShape="Circle" 
+						
+						
+						objectImageURI="images/logo.png"
+						objectTitle="{FullName}"
+						objectImageAlt="{FullName}"
+						objectSubtitle="{JobTitle}"
+						
+						isObjectIconAlwaysVisible="false"
+						isObjectTitleAlwaysVisible="false"
+						isObjectSubtitleAlwaysVisible="false"
+					
+						showPlaceholder="true" visible="true">
+						<!--						<uxap:actions>
+							<uxap:ObjectPageHeaderActionButton icon="{mentorDetailsView>/deltaFileIcon}" hideText="False" text="{/BSAR/JE_UPL_UPL_009}" type="Transparent"/>
+							<uxap:ObjectPageHeaderActionButton icon="{mentorDetailsView>/fileListIcon}" hideText="False" text="{/BSAR/JE_UPL_UPL_022}" type="Transparent"/>
+						</uxap:actions>
+-->
+					</uxap:ObjectPageHeader>
+				</uxap:headerTitle>
+				<uxap:headerContent>
+
+
+					<NumericContent value="{ShirtNumber}" size="M" />
+					<layout:VerticalLayout>
+						<Label text="{City}, {Country/Name}"/>
+						<Link text="{Phone}"/>
+						<Link text="{Email1}"/>
+						<Link text="{Email2}"/>
+					</layout:VerticalLayout>
+					<layout:HorizontalLayout>
+						<Image src="images/linkedin.png"></Image>
+						<Image src="images/Twitter.png"></Image>
+					</layout:HorizontalLayout>
+					<layout:VerticalLayout>
+						<Label text="{Bio}"/>
+					</layout:VerticalLayout>
+					<layout:VerticalLayout>
+
+
+					</layout:VerticalLayout>
+				</uxap:headerContent>
+				<uxap:sections>
+					<uxap:ObjectPageSection title="{i18n>LEMONAID_MDV_020}">
+						<uxap:subSections>
+							<uxap:ObjectPageSubSection title="{i18n>LEMONAID_MDV_030}">
+								<uxap:blocks>
+<!--									<mvc:XMLView viewName="com.sap.mentors.lemonaid.projectteam.view.Mentorlist"/>
+-->									<Button text="hallo"/>
+								</uxap:blocks>
+							</uxap:ObjectPageSubSection>
+						</uxap:subSections>
+					</uxap:ObjectPageSection>
+					
+					<uxap:ObjectPageSection title="{i18n>LEMONAID_MDV_021}">
+						<uxap:subSections>
+							<uxap:ObjectPageSubSection title="{i18n>LEMONAID_MDV_031}">
+								<uxap:blocks>
+									<Button text="hallo"/>
+								</uxap:blocks>
+							</uxap:ObjectPageSubSection>
+						</uxap:subSections>
+					</uxap:ObjectPageSection>
+
+					<uxap:ObjectPageSection title="{i18n>LEMONAID_MDV_022}">
+						<uxap:subSections>
+							<uxap:ObjectPageSubSection title="{i18n>LEMONAID_MDV_032}">
+								<uxap:blocks>
+									<Button text="hallo"/>
+								</uxap:blocks>
+							</uxap:ObjectPageSubSection>
+						</uxap:subSections>
+					</uxap:ObjectPageSection>
+
+					<uxap:ObjectPageSection title="{i18n>LEMONAID_MDV_023}">
+						<uxap:subSections>
+							<uxap:ObjectPageSubSection title="{i18n>LEMONAID_MDV_033}">
+								<uxap:blocks>
+									<Button text="hallo"/>
+								</uxap:blocks>
+							</uxap:ObjectPageSubSection>
+						</uxap:subSections>
+					</uxap:ObjectPageSection>
+					<uxap:ObjectPageSection title="{i18n>LEMONAID_MDV_024}">
+						<uxap:subSections>
+							<uxap:ObjectPageSubSection title="{i18n>LEMONAID_MDV_034}">
+								<uxap:blocks>
+									<Button text="hallo"/>
+								</uxap:blocks>
+							</uxap:ObjectPageSubSection>
+						</uxap:subSections>
+					</uxap:ObjectPageSection>
+
+				</uxap:sections>
+			</uxap:ObjectPageLayout>
+		</semantic:content>
+		<semantic:sendEmailAction>
+			<semantic:SendEmailAction id="shareEmail" press="onShareEmailPress"/>
+		</semantic:sendEmailAction>
+	</semantic:FullscreenPage>
+</mvc:View>

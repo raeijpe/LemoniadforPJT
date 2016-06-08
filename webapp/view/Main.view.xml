@@ -1,0 +1,80 @@
+<mvc:View controllerName="com.sap.mentors.lemonaid.projectteam.controller.Main" xmlns="sap.m" xmlns:uxap="sap.uxap"
+	xmlns:layout="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.m.semantic" xmlns:core="sap.ui.core">
+	<semantic:FullscreenPage id="mainPage" navButtonPress="onNavBack" showNavButton="true" title="{i18n>LEMONAID_MLV_001}">
+		<semantic:content>
+			<uxap:ObjectPageLayout enableLazyLoading="false" alwaysShowContentHeader="true" id="mainObjectPageLayout" showHeaderContent="true"
+				showTitleInHeaderContent="false" subSectionLayout="TitleOnTop" toggleAnchorBar="onToggleAnchorBar" useIconTabBar="true">
+				<uxap:headerTitle>
+					<uxap:ObjectPageHeader headerDesign="Light" id="mainObjectPageHeader" isActionAreaAlwaysVisible="true"
+						isObjectIconAlwaysVisible="false" isObjectSubtitleAlwaysVisible="true" isObjectTitleAlwaysVisible="true"
+						objectImageAlt="mainDescription" objectImageShape="Circle" objectImageURI="" objectSubtitle="{i18n>LEMONAID_MLV_011}"
+						objectTitle="{i18n>LEMONAID_MLV_010}" showPlaceholder="true" visible="true">
+						<!--						<uxap:actions>
+							<uxap:ObjectPageHeaderActionButton icon="{mainView>/deltaFileIcon}" hideText="False" text="{/BSAR/JE_UPL_UPL_009}" type="Transparent"/>
+							<uxap:ObjectPageHeaderActionButton icon="{mainView>/fileListIcon}" hideText="False" text="{/BSAR/JE_UPL_UPL_022}" type="Transparent"/>
+						</uxap:actions>
+-->
+					</uxap:ObjectPageHeader>
+				</uxap:headerTitle>
+				<uxap:headerContent>
+
+				</uxap:headerContent>
+				<uxap:sections>
+					<uxap:ObjectPageSection title="{i18n>LEMONAID_MLV_020}">
+						<uxap:subSections>
+							<uxap:ObjectPageSubSection title="{i18n>LEMONAID_MLV_030}">
+								<uxap:blocks>
+									<mvc:XMLView viewName="com.sap.mentors.lemonaid.projectteam.view.Mentorlist"/>
+								</uxap:blocks>
+							</uxap:ObjectPageSubSection>
+						</uxap:subSections>
+					</uxap:ObjectPageSection>
+					
+					<uxap:ObjectPageSection title="{i18n>LEMONAID_MLV_021}">
+						<uxap:subSections>
+							<uxap:ObjectPageSubSection title="{i18n>LEMONAID_MLV_031}">
+								<uxap:blocks>
+									<Text text="please implement view: com.sap.mentors.lemonaid.projectteam.view.Eventlist  "/>
+								</uxap:blocks>
+							</uxap:ObjectPageSubSection>
+						</uxap:subSections>
+					</uxap:ObjectPageSection>
+
+					<uxap:ObjectPageSection title="{i18n>LEMONAID_MLV_022}">
+						<uxap:subSections>
+							<uxap:ObjectPageSubSection title="{i18n>LEMONAID_MLV_032}">
+								<uxap:blocks>
+									<Text text="please implement view: com.sap.mentors.lemonaid.projectteam.view.SocialMedia  "/>
+								</uxap:blocks>
+							</uxap:ObjectPageSubSection>
+						</uxap:subSections>
+					</uxap:ObjectPageSection>
+
+					<uxap:ObjectPageSection title="{i18n>LEMONAID_MLV_023}">
+						<uxap:subSections>
+							<uxap:ObjectPageSubSection title="{i18n>LEMONAID_MLV_033}">
+								<uxap:blocks>
+									<Text text="please implement view: com.sap.mentors.lemonaid.projectteam.view.Mailing \n\n GIT Issue #6: Export mentor data based on selection"/>
+								</uxap:blocks>
+							</uxap:ObjectPageSubSection>
+						</uxap:subSections>
+					</uxap:ObjectPageSection>
+
+					<uxap:ObjectPageSection title="{i18n>LEMONAID_MLV_024}">
+						<uxap:subSections>
+							<uxap:ObjectPageSubSection title="{i18n>LEMONAID_MLV_034}">
+								<uxap:blocks>
+									<Text text="please implement view: com.sap.mentors.lemonaid.projectteam.view.Geographic \n\n GIT Issue #6: Export mentor data based on selection"/>
+								</uxap:blocks>
+							</uxap:ObjectPageSubSection>
+						</uxap:subSections>
+					</uxap:ObjectPageSection>
+
+				</uxap:sections>
+			</uxap:ObjectPageLayout>
+		</semantic:content>
+		<semantic:sendEmailAction>
+			<semantic:SendEmailAction id="shareEmail" press="onShareEmailPress"/>
+		</semantic:sendEmailAction>
+	</semantic:FullscreenPage>
+</mvc:View>

@@ -1,0 +1,44 @@
+<core:FragmentDefinition xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns:saptable="sap.ui.table"
+	xmlns:core="sap.ui.core" xmlns="sap.m">
+	<Table id="allMentorlistTable" width="auto" class="sapUiResponsiveMargin"
+		items="{ path: '/Mentors', parameters: { select: 'FullName,ShirtNumber,Id,Email1', expand: 'MentorStatus' }, 
+		sorter: {path: 'ShirtNumber', descending: false} }"
+		noDataText="{MentorlistView>/tableNoDataText}" 
+		busyIndicatorDelay="{MentorlistView>/tableBusyDelay}" 
+		growing="true"
+		growingScrollToLoad="true" 
+		updateFinished="onUpdateFinishedMentorlistTable">
+		<headerToolbar>
+			<Toolbar id="allMentorlistTableToolbar">
+				<Title id="allMentorlistTableHeader" text="{MentorlistView>/AllMentorlistTableTitle}"/>
+				<ToolbarSpacer/>
+				<SearchField id="allMentorlistTableSearch" tooltip="{i18n>MentorlistSearchTooltip}" search="onSearchMentorListTable" width="auto"></SearchField>
+			</Toolbar>
+		</headerToolbar>
+		<columns>
+			<Column id="llMentorlistTableColumnPhoto" width="5rem">
+				<Text text="{i18n>photo}" visible="{= !${device>/system/phone} }"/>
+			</Column>
+			<Column id="allMentorlistTableColumnInfo">
+				<Text text="{i18n>fullName}\n{i18n>shirtNumber}" visible="{= !${device>/system/phone} }"/>
+			</Column>
+			<Column id="llMentorlistTableColumnRelationship" minScreenWidth="Tablet">
+				<Text text="{i18n>relSAP}"/>
+			</Column>
+			<Column id="llMentorlistTableColumnStatus" minScreenWidth="Tablet">
+				<Text text="{i18n>mentorStatus}"/>
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem type="Navigation" press="onPress">
+				<cells>
+					<Image width="4rem" height="4rem" src="{path:'Email1', formatter:'.getAvatarURL'}"
+						class="sapMTableContentMargin avatarSmall sapUxAPObjectPageHeaderObjectImage-Circle"/>
+					<ObjectIdentifier title="{FullName}" text="{ShirtNumber}" class="sapMTableContentMargin"/>
+					<Text text="{RelationshipToSap/Name}" class="sapMTableContentMargin"/>
+					<Text text="{MentorStatus/Name}" class="sapMTableContentMargin"/>
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+</core:FragmentDefinition>
