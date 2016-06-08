@@ -20,7 +20,7 @@
 				<content>
 					<core:Fragment fragmentName="com.sap.mentors.lemonaid.projectteam.view.MentorlistAlumniMentors" type="XML"/>
 				</content>
-			</IconTabFilter>
+			</IconTabFilter> 
 		</items>
 	</IconTabBar>
 </mvc:View>
