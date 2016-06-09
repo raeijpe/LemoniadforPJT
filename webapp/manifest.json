@@ -41,10 +41,7 @@
 			"tablet": true,
 			"phone": true
 		},
-		"supportedThemes": [
-			"sap_hcb",
-			"sap_bluecrystal"
-		],
+		"supportedThemes": ["sap_hcb", "sap_bluecrystal"],
 		"fullWidth": true
 	},
 	"sap.ui5": {
@@ -68,6 +65,9 @@
 		"contentDensities": {
 			"compact": true,
 			"cozy": true
+		},
+		"resourceRoots": {
+			"openui5.googlemaps": "./util/openui5_googlemaps/"
 		},
 		"models": {
 			"i18n": {
@@ -93,34 +93,25 @@
 				"controlId": "app",
 				"controlAggregation": "pages",
 				"bypassed": {
-					"target": [
-						"notFound"
-					]
+					"target": ["notFound"]
 				},
 				"async": true
 			},
-			"routes": [
-				{
-					"pattern": "",
-					"name": "main",
-					"target": [
-						"main"
-					]
-				},
-				{
-					"pattern": "MentorInfo/{sid}",
-					"name": "mentorDetails",
-					"target": [
-						"mentorDetails"
-					]
-				}
-			],
+			"routes": [{
+				"pattern": "",
+				"name": "main",
+				"target": ["main"]
+			}, {
+				"pattern": "MentorInfo/{sid}",
+				"name": "mentorDetails",
+				"target": ["mentorDetails"]
+			}],
 			"targets": {
 				"main": {
 					"viewName": "Main",
 					"viewId": "main",
 					"viewLevel": 1
-				},				
+				},
 				"mentorDetails": {
 					"viewName": "MentorDetails",
 					"viewId": "mentorDetails",

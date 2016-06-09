@@ -2,8 +2,9 @@ sap.ui.define([
 		"sap/ui/core/UIComponent",
 		"sap/ui/Device",
 		"com/sap/mentors/lemonaid/projectteam/model/models",
-		"com/sap/mentors/lemonaid/projectteam/controller/ErrorHandler"
-	], function (UIComponent, Device, models, ErrorHandler) {
+		"com/sap/mentors/lemonaid/projectteam/controller/ErrorHandler",
+		"com/sap/mentors/lemonaid/projectteam/util/openui5_googlemaps/ScriptsUtil"
+	], function (UIComponent, Device, models, ErrorHandler,gmapScriptsUtil) {
 		"use strict";
 
 		return UIComponent.extend("com.sap.mentors.lemonaid.projectteam.Component", {
@@ -20,6 +21,9 @@ sap.ui.define([
 			 */
 			init : function () {
 				// call the base component's init function
+				var sPath = jQuery.sap.getResourcePath("openui5/googlemaps/loadScripts");
+	           jQuery.sap.registerResourcePath("google.maps", sPath);
+				
 				UIComponent.prototype.init.apply(this, arguments);
 
 				// initialize the error handler with the component
@@ -28,7 +32,12 @@ sap.ui.define([
 				// set the device model
 				this.setModel(models.createDeviceModel(), "device");
 				this.setModel(models.createApplicationModel(), "app");
+			// set the mentors model, needed for additional info
+			this.setModel(models.createMentorsModel(), "mentors");
 
+			//TODO - get real key this is W3Cs
+       		gmapScriptsUtil.setApiKey("AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM");
+       		
 				// create the views based on the url/hash
 				this.getRouter().initialize();
 			},

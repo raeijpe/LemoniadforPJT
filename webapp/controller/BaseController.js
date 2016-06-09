@@ -14,6 +14,11 @@ sap.ui.define([
 			return sap.ui.core.UIComponent.getRouterFor(this);
 		},
 
+		getEventBus: function(){
+			return this.getOwnerComponent().getEventBus();
+			
+		},
+
 		/**
 		 * Convenience method for getting the view model by name.
 		 * @public

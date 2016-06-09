@@ -20,7 +20,12 @@ sap.ui.define([
 				});
 				oModel.setDefaultBindingMode("OneWay");
 				return oModel;
-			}
+			},
+					createMentorsModel: function() {
+			var oModel = new JSONModel([]);
+			oModel.setDefaultBindingMode("OneWay");
+			return oModel;
+		}
 
 
 		};

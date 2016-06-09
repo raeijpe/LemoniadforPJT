@@ -93,7 +93,7 @@
 						<uxap:subSections>
 							<uxap:ObjectPageSubSection title="{i18n>LEMONAID_MDV_034}">
 								<uxap:blocks>
-									<Button text="hallo"/>
+									<mvc:XMLView viewName="com.sap.mentors.lemonaid.projectteam.view.MentorDetailsLocation"/>
 								</uxap:blocks>
 							</uxap:ObjectPageSubSection>
 						</uxap:subSections>
