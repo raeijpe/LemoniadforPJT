@@ -21,6 +21,10 @@ sap.ui.define([
 			 */
 			init : function () {
 				// call the base component's init function
+				var sPath = jQuery.sap.getResourcePath("./util/openui5_googlemaps/");
+	           jQuery.sap.registerResourcePath("openui5.googlemaps", sPath);
+
+
 				var sPath = jQuery.sap.getResourcePath("openui5/googlemaps/loadScripts");
 	           jQuery.sap.registerResourcePath("google.maps", sPath);
 				

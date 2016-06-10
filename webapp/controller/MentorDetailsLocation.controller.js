@@ -56,7 +56,7 @@ sap.ui.define(["com/sap/mentors/lemonaid/projectteam/controller/BaseController",
 		},
 		
 		 setMentorLocation: function(oBindingContext) {
-		 	if (oBindingContext){
+//		 	if (oBindingContext){
             var oMap = this.getView().byId("mentorDetailsLocationMap");
             var oObject = oBindingContext.getObject();
             var oMentorsModel = this.getModel("mentors");
@@ -68,14 +68,27 @@ sap.ui.define(["com/sap/mentors/lemonaid/projectteam/controller/BaseController",
             };
 
             var oEntry = aEntries.filter(fnFilter)[0] || null;
+			var refreshMap = function refreshMap(){
+				this.getView().invalidate();
+				var oMapU = this.getView().byId("mentorDetailsLocationMap");
+				
+				var oContextM = oMentorsModel.getContext("/" + this._mapMentorId);
+                oMapU.setBindingContext(oContextM, "mentors"); 
+                delete this._mapMentorId;
+			};
 
             if (!oEntry) {
-                this.searchForLocation(oObject, this.addMentorLocation.bind(this), this.setMentorLocation.bind(this));
+            	this._mapMentorId = aEntries && aEntries.length || 0;
+//                this.searchForLocation(oObject, this.addMentorLocation.bind(this), this.setMentorLocation.bind(this));
+                this.searchForLocation(oObject, this.addMentorLocation.bind(this), refreshMap.bind(this));
+
             } else {
                 var oContext = oMentorsModel.getContext("/" + aEntries.indexOf(oEntry));
                 oMap.setBindingContext(oContext, "mentors");      
      
-            }}
+            }
+		 	
+//		 }
         },
 
         /**
